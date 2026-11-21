@@ -1,6 +1,6 @@
 # 智脑X（zhino-x）
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-6c5ce7.svg)](https://github.com/DeathKne111/zhino-x/releases/tag/v1.0.0)
+[![Version](https://img.shields.io/badge/version-v1.0.1-6c5ce7.svg)](https://github.com/DeathKne111/zhino-x/releases/tag/v1.0.1)
 [![Upstream](https://img.shields.io/badge/upstream-zhino--script%20A5.5.0-0984e3.svg)](https://github.com/sillytavner-jpg/zhino-script)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](./LICENSE)
 [![Non-Commercial](https://img.shields.io/badge/免费开源-严禁倒卖商用-d63031.svg)](./NOTICE.md)
@@ -63,17 +63,17 @@
 
 1. 下载或复制薄壳文件链接：
    ```text
-   https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.0/zhino-x-v1.0.0.json
+   https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.1/zhino-x-v1.0.1.json
    ```
-2. 打开 SillyTavern / TauriTavern → **扩展** → **酒馆助手（Tavern Helper）** → **脚本库** → **导入**，选择 `zhino-x-v1.0.0.json` 并启用。
-3. 刷新页面即可生效（控制台/日志出现 `智脑X v1.0.0 已加载`）。
+2. 打开 SillyTavern / TauriTavern → **扩展** → **酒馆助手（Tavern Helper）** → **脚本库** → **导入**，选择 `zhino-x-v1.0.1.json` 并启用。
+3. 刷新页面即可生效（控制台/日志出现 `智脑X v1.0.1 已加载`）。
 
 ### 方式二：手动新建 / 修改脚本链接（CDN）
 
 在酒馆助手脚本库中新建或编辑已有「智脑」脚本，将内容替换为：
 
 ```js
-import 'https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.0/dist/index.js'
+import 'https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.1/dist/index.js'
 ```
 
 ### 方式三：本地文件加载

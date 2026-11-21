@@ -4,6 +4,15 @@
 
 ---
 
+## [v1.0.1] - 2026-11-22
+
+### 修复与增强
+- **全对象树递归 Int8 向量压扁（`__q8Deep`）**：修复持久化安全网 `W()` 与设置页统计 `v()` 遗漏撤回历史 `summaryHistory`、顶层 `characterMemories` 及 `itemMemories` 中旧明文浮点向量的问题，确保落盘前所有嵌套字段残留明文向量归零并彻底剥离 `coreMemories` 重复向量。
+- **强制 `saveChat()` 立即刷盘**：优化聊天数据保存路径，在 TauriTavern / SillyTavern 环境下优先触发 `saveChat()`，点击「统计」本地无损压扁后立即重写 `.jsonl` 磁盘文件并刷新聊天记录体积。
+- **统计面板显式压缩战报**：点击「统计」直接显示已本地无损压缩的旧向量条数与智脑数据前后大小变化（`约 XXX KB → YYY KB`），不再黑盒。
+
+---
+
 ## [v1.0.0] - 2026-11-21
 
 **智脑X（DeathKne111/zhino-x）正式独立建仓首发版本**，基于上游 `sillytavner-jpg/zhino-script@A5.5.0` 深度重构并整合全套实机验收修复：
