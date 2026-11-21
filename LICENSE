@@ -1,0 +1,67 @@
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+
+========================================================================
+版权边界与上游归属声明（Scope & Upstream Attribution Notice）
+========================================================================
+
+1. 本仓库「智脑X（zhino-x）」是由 DeathKne111 基于开源/公开项目
+   「明月秋青脚本-秋青（智脑）A5.5.0」（上游仓库：
+   https://github.com/sillytavner-jpg/zhino-script）进行深度重构、
+   缺陷修复与功能增强的社区非盈利维护分支。
+2. 上游原版底座代码的著作权归原项目作者所有。本 CC BY-NC-SA 4.0 许可协议
+   仅适用于本仓库维护者对「智脑X」所作的新增代码、二次重构、提示词工程、
+   前端组件改造与配套文档，不主张亦不覆盖上游原作者的既有权利。
+   详细致谢与权益沟通方式请参阅同目录 NOTICE.md。
+
+========================================================================
+协议核心条款摘要（Human-Readable Summary）
+========================================================================
+
+在遵守上游原作者权益与以下条件的前提下，您可以自由地：
+
+- 共享（Share）—— 在任何媒介以任何形式复制、发行本作品；
+- 演绎（Adapt）—— 修改、转换或以本作品为基础进行二次创作。
+
+惟须遵守下列全部条件：
+
+1. 署名（Attribution）
+   您必须给出适当的署名（保留原作者明月秋青/智脑及本分支 DeathKne111/zhino-x
+   的出处与链接），提供指向本许可协议的链接，同时标明是否对原始作品作了修改。
+2. 非商业性使用（NonCommercial）
+   严禁将本作品（含打包整合包、修改版、镜像、代理脚本、教程附带分发等形式）
+   用于任何商业目的，包括但不限于：收费售卖、付费群/付费频道门槛分发、
+   捆绑销售、引流变现或商业平台二次分发。
+3. 相同方式共享（ShareAlike）
+   如果您再混合、转换或者基于本作品进行创作，您必须基于与本作品相同的
+   CC BY-NC-SA 4.0 许可协议来分发您的贡献作品，且不得附加额外法律条款或
+   技术措施限制他人依法行使本协议授予的权利。
+
+========================================================================
+官方完整法律文本（Legal Code）
+========================================================================
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an "as-is" basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.
+
+The full official legal code of Creative Commons Attribution-NonCommercial-
+ShareAlike 4.0 International Public License is available at:
+
+    https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+By exercising the Licensed Rights (defined in Section 1 of the Legal Code),
+You accept and agree to be bound by the terms and conditions of this
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+Public License.
+
+DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY:
+Unless otherwise separately undertaken by the Licensor, to the extent
+possible, the Licensor offers the Licensed Material as-is and as-available,
+and makes no representations or warranties of any kind concerning the
+Licensed Material, whether express, implied, statutory, or other.
