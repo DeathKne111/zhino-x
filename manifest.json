@@ -3,7 +3,7 @@
   "loading_order": 5,
   "js": "dist/index.js",
   "author": "DeathKne111",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "CC-BY-NC-SA-4.0",
   "homepage": "https://github.com/DeathKne111/zhino-x",
   "description": "智脑X（基于明月秋青/智脑 A5.5.0 深度重构）：融合大总结与纯地点/物品图谱、全量角色记忆 Int8 压缩远期向量召回与情绪保真、Ny-Sigon 深度解梦与三块独立编辑、全分块自然人话槽位注入、大总结撤回自动取消隐藏与游标自愈、选定/批量总结自动保留近期楼层、OpenAI 协议后端代理回退及 Nudge 原话还原。"
