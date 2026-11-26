@@ -1,6 +1,6 @@
 # 智脑X（zhino-x）
 
-[![Version](https://img.shields.io/badge/version-v1.0.5-6c5ce7.svg)](https://github.com/DeathKne111/zhino-x/releases/tag/v1.0.5)
+[![Version](https://img.shields.io/badge/version-v1.0.6-6c5ce7.svg)](https://github.com/DeathKne111/zhino-x/releases/tag/v1.0.6)
 [![Upstream](https://img.shields.io/badge/upstream-zhino--script%20A5.5.0-0984e3.svg)](https://github.com/sillytavner-jpg/zhino-script)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](./LICENSE)
 [![Non-Commercial](https://img.shields.io/badge/免费开源-严禁倒卖商用-d63031.svg)](./NOTICE.md)
@@ -50,7 +50,11 @@
 - **自然人话引导词**：全分块重写为贴合创作视角的自然引导词（无「预设 / 系统 / 后台 / NPC」等出戏词，兼容抢话与不抢话，自动代入真实用户名）。
 - **MVU 额外解析轮精确清理**：升级标签清理正则支持带属性与同前缀嵌套标签精确配对，确保 MVU 解析轮整块清零无残留。
 
-### 5. 反代兼容、Nudge 还原与召回设置持久化
+### 5. 多角色防爆、动态人设三层、一键迁移新会话与反代兼容
+- **多角色在场分级与 Token 防爆**：自动剔除泛称别名干扰，结合「最新用户输入 + 上一楼 AI」将角色分为真正在场（Primary，可配置单轮上限默认 5 人）与顺口提及远场（Mentioned，不注动态人设、跳过链 2、最多注极简核心背景），五路注入（记忆 / 动态人设 / 活跃线索账本 / 关系档案 / 知识图谱）全面统一限流，保护原预设质量。
+- **动态人设 V2 三层架构与自动精简闭环**：新增受保护的「★ 永久 / 长期质变层」（只增/演化不覆盖，防过度纠偏洗白），与当前事实层、表现层清晰分离；修掉回空误清空与整条覆写丢字段问题并新增撤回快照；大总结与角色记忆可只读隔离参考动态人设（未开启时零依赖），大总结完成后后台自动对本批出场角色轻量精简去重并死守永久改变。
+- **大总结「活跃线索账本」与时光轴卡片**：时间线注入补打 `（在场：...）`；新增轻量增量式 `storyLedger`（未完约定 / 活跃伏笔 / 信息差，解决即销账、上限 10 条、按在场角色过滤注入），并在时光轴顶部提供查看、一键销账与手动新增卡片。
+- **一键迁移到同角色卡新会话**：在「设置 → 数据管理」顶部原子新建同一角色卡 `.jsonl` 会话——跳过全部隐藏楼层、保留全部非隐藏楼层与全量智脑数据及 Int8 向量、自动重映射所有楼层游标与图谱基线、原会话一字不动，写入后一键切入新会话。
 - **OpenAI 协议后端代理自动回退**：直连优先，遇 CORS 或网络拦截自动切换酒馆同源后端代理（附 `type: 'quiet'`，自动兼容 `400` 非标参数重试，支持 API 测试与手填模型名）。
 - **Nudge 真实用户输入全链路还原**：优先读取楼层 `extra.qqz_nudge.text`（兜底 `<nudge>`），开聊自动回补历史 `userInputRecords` 并打印计数进度。
 - **角色召回设置跨总结持久化**：单角色的「语义召回 / 全量注入」开关与「注入条数」跨多轮大总结与未出场轮次永久保留。
@@ -63,17 +67,17 @@
 
 1. 下载或复制薄壳文件链接：
    ```text
-   https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.5/zhino-x-v1.0.5.json
+   https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.6/zhino-x-v1.0.6.json
    ```
-2. 打开 SillyTavern / TauriTavern → **扩展** → **酒馆助手（Tavern Helper）** → **脚本库** → **导入**，选择 `zhino-x-v1.0.5.json` 并启用。
-3. 刷新页面即可生效（控制台/日志出现 `智脑X v1.0.5 已加载`）。
+2. 打开 SillyTavern / TauriTavern → **扩展** → **酒馆助手（Tavern Helper）** → **脚本库** → **导入**，选择 `zhino-x-v1.0.6.json` 并启用。
+3. 刷新页面即可生效（控制台/日志出现 `智脑X v1.0.6 已加载`）。
 
 ### 方式二：手动新建 / 修改脚本链接（CDN）
 
 在酒馆助手脚本库中新建或编辑已有「智脑」脚本，将内容替换为：
 
 ```js
-import 'https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.5/dist/index.js'
+import 'https://cdn.jsdelivr.net/gh/DeathKne111/zhino-x@v1.0.6/dist/index.js'
 ```
 
 ### 方式三：本地文件加载
