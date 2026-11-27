@@ -4,6 +4,30 @@
 
 ---
 
+## [v1.0.7] - 2026-11-27
+
+### 稳定性紧急热修与总结/记忆/图谱全面提质
+- **修复「重新总结 / 撤回」导致原记忆永久丢失与状态残留的核弹级 Bug**：
+  - 根除 `Store.rollbackSummary(e, n)` 内局部变量 `e` 遮蔽外层深拷贝函数 `e()` 引发的 `TypeError: e is not a function`；
+  - `O()` 重新总结升级为完整**事务级快照保护**（`summaries` / `summaryHistory` / `characterMemories` / `nsfwMemories` / `storyLedger` / `knowledgeGraph` / `knowledgeGraphVersions` / `knowledgeGraphHistory` / 双游标），任何异常 100% 原子无损恢复原记忆；
+  - `Store.addSummary` 自动保存轻量 `_prevKnowledgeGraph` 与 `_prevNsfwMemories` 快照，`rollbackSummary` 撤回/重新总结时同步回退图谱版本与 `nsfwMemories`，彻底解决「重总结沿用旧粗图谱不细分」与「重总结 NSFW 重复叠加」问题，并同步推进/回退 `lastCharacterMemoryAtMessageId`。
+- **修复大总结解析失败、API 并发卡住与 `json_object` 破限冲突**：
+  - `Ge.AH` 增加 `response_format: json_object` 门控（带 `<thinking>` 预填、MUV 模式或三档破限时自动不发冲突语法锁），`_fetchSmart` 400 重试保留代理状态，请求前补启动日志且进度条按 `analysisName` 隔离防互相清空；
+  - 重写 `Xe.eg` 支持未闭合代码块与按 `{`/`[` 优先位置精准提取；`Nn()` 与 `Ln()` 全面接入 `jsonrepair` 与强容错规范化，拒绝非显式空输出静默清空角色记忆；`Gn()` 内置单路失败局部重试（保留已成功大总结，绝不浪费重跑）。
+- **根治角色记忆漏人、丢前半段与别名污染问题**：
+  - 升级 `Gn()` 为**「大总结先点名 → 角色记忆全员覆盖」两段式联动**：把大总结梳理的全员出场核对清单（含出场次数、时段跨度、事件线索）与角色名册 `characterRoster` 一并喂给 `Wn()`，多角色批次自动平衡条数，并内置**核心漏角自动定向补抽兜底保险丝**；
+  - 彻底铲除全仓 4 处 `characterTable[].aliases = e.keywords.slice(0, 3)` 毒污染 Bug（防止关键词如他人小名或地名冒充角色别名触发错合并），并在 `Store.kn()` 加入历史存档脏别名自动消毒；
+  - 补全 MUV 模板 `aliases` 字段并强制提取正文真实简称/昵称，自动对齐时间线简称/头衔名（如 `查克` ↔ `查克博士`）；强化纯中文叙述、事实比例核对与电话/私信远程实质互动角色纳入出场名单；
+  - 修复 `Ue.cp` / `Ue.sg` 漏单字名、丢 `allNames` 角色及泛称/代词轮次空命中 0 注入问题，同时保留多角色卡路人泛称 0 误报防护。
+- **全面强化地点库/物品库完整度、`<user>` 背包与活跃线索账本**：
+  - `Sn()` 升级为**独立场景/楼层/房间级拆分铁律**（禁止将整栋建筑打包压成一条）、补全现代都市 + 奇幻通用关键物清单与最晚楼层最终状态原则，并新增稀疏图谱轻量自动补全通道（`_supplementGrandKg`）；
+  - 根治图谱离场降级函数 `u.W0` 误按 `owner` 而非 `location` 判定导致借给/发给 `<user>` 的随身物品（如副卡、员工徽章）被清 `status` 并篡改回原主踢出背包的 Bug；`commitKnowledgeGraph` 自动按名册归一物品归属角色名（含西式全名）；
+  - `Sn()` 顶部任务声明补齐第 3 块 `ledgerOps`，`Nn()` 兼容多种账本键名/数组写法，`Store.applyStoryLedgerOps` 对 MUV `/ledger/L1` 升级为 upsert，根治空账本问题。
+- **修复「设置 → 数据管理 → 数据删除」漏清项**：
+  - 补全「地点库 / 物品库 / 背包」与「关系档案与角色设定」模块，彻底清空 `knowledgeGraph`、`<user>` 背包、`characterLocations`、`characterMemories`、`characterRegistry`、`smallSummaries`、`stateAuditLog` 与 `-1` 游标并立即刷新组装缓存。
+
+---
+
 ## [v1.0.6] - 2026-11-26
 
 ### 新增与重大升级
